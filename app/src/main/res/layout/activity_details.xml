@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsActivity"
+    android:background="#1e2025"
+    android:padding="25dp"
+    >
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvDetails"
+        android:paddingLeft="10dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Detail Karakter"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        />
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/baseline_keyboard_backspace_24"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ivCardImage"
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:layout_marginVertical="25dp"
+        android:layout_below="@id/tvDetails"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tvSynopsis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivCardImage"
+        android:text="Male"
+        android:textSize="15dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textStyle="normal"
+        android:textColor="@color/white"
+        />
+
+</RelativeLayout>

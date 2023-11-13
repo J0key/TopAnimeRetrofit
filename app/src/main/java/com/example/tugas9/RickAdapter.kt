@@ -1,6 +1,7 @@
 package com.example.tugas9
 
 import android.app.LauncherActivity
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
@@ -24,9 +25,6 @@ class RickAdapter(private var dataRick: List<DataItem?>?): RecyclerView.Adapter<
         val episodeRick = view.findViewById<TextView>(R.id.item_episode_rick)
         val durationRick = view.findViewById<TextView>(R.id.item_duration_rick)
         val ratingRick = view.findViewById<TextView>(R.id.item_rating_rick)
-
-
-
 
     }
 
@@ -58,8 +56,16 @@ class RickAdapter(private var dataRick: List<DataItem?>?): RecyclerView.Adapter<
 
 
         holder.itemView.setOnClickListener{
+            val context = holder.itemView.context
+            val intent = Intent(context, DetailsActivity::class.java)
+            intent.putExtra("title", holder.titleRick.text)
+            intent.putExtra("image", dataRick?.get(position)?.images?.jpg?.imageUrl)
+            intent.putExtra("synopsis", dataRick?.get(position)?.synopsis)
+            context.startActivity(intent)
+
             val name = dataRick?.get(position)?.title
             Toast.makeText(holder.itemView.context, "${name}", Toast.LENGTH_SHORT).show()
+
 
         }
     }
